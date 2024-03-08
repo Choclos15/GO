@@ -289,6 +289,26 @@ func IsPalindromo(text string) {
 	} else {
 		fmt.Println("No es palindromo")
 	}
+
+	m := make(map[string]int)
+
+	m["Jose"] = 14
+	m["Pepito"] = 20
+	fmt.Println(m)
+
+	for i, v := range m {
+		fmt.Println(i, v)
+	}
+
+	valueMap := m["Jose"]
+	fmt.Println(valueMap)
+	valueMap = m["Josep"]
+	fmt.Println(valueMap)
+	valueMap2, ok := m["Jose"]
+	fmt.Println(valueMap2, ok)
+	valueMap2, ok = m["Josep"]
+	fmt.Println(valueMap2, ok)
+
 }
 
 func NormalFunction() {
