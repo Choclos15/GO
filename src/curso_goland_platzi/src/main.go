@@ -198,6 +198,25 @@ func main() {
 	}
 
 	fmt.Println(valueTxt)
+
+	//Múltiple condiciones anidadas con Switch
+
+	switch modulo := 5 % 2; modulo {
+	case 0:
+		fmt.Println("Es par")
+	default:
+		fmt.Println("Es impar")
+	}
+
+	valueInt := 1
+	switch {
+	case valueInt > 100:
+		fmt.Println("Es mayor a 100")
+	case valueInt < 0:
+		fmt.Println("Es menor a 0")
+	default:
+		fmt.Println("No condición")
+	}
 }
 
 func NormalFunction() {
