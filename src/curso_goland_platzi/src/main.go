@@ -217,6 +217,30 @@ func main() {
 	default:
 		fmt.Println("No condición")
 	}
+
+	//defer
+	fmt.Println("Hola")
+	fmt.Println("Mundo")
+
+	defer fmt.Println("Hola")
+	fmt.Println("Mundo")
+
+	//continue y  break
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+
+		//Continue
+		if i == 2 {
+			fmt.Println("Es 2")
+			continue
+		}
+
+		if i == 6 {
+			fmt.Println("Es 6")
+			break
+		}
+	}
 }
 
 func NormalFunction() {
