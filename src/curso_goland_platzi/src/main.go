@@ -267,6 +267,28 @@ func main() {
 	slice = append(slice, newSlice...)
 	fmt.Println(slice)
 
+	sliceRange := []string{"Hola", "que", "haces"}
+
+	for i := range sliceRange {
+		fmt.Println(i)
+	}
+
+	IsPalindromo("amor a roma")
+	IsPalindromo("casas")
+}
+
+func IsPalindromo(text string) {
+	var textReverse string
+
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if text == textReverse {
+		fmt.Println("Es palindromo")
+	} else {
+		fmt.Println("No es palindromo")
+	}
 }
 
 func NormalFunction() {
