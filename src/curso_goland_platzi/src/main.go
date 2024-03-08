@@ -65,4 +65,33 @@ func main() {
 	//DECREMENTAL
 	x--
 	fmt.Println("DECREMENTAL: ", x)
+
+	//RETO
+	//AREAS DE RECTANGULO, TRAPECIO Y CIRCULO
+	areaRectangulo := base * altura
+	fmt.Println("Area Rectangulo: ", areaRectangulo)
+
+	//Paquete fmt
+	//Declaración de variables
+	helloMessage := "Hello"
+	wordlMessage := "World"
+
+	//Println
+	fmt.Println(helloMessage, wordlMessage)
+	fmt.Println(helloMessage, wordlMessage)
+
+	//Printf
+	nombre := "Platzi"
+	cursos := 500
+	fmt.Printf("%s tiene más de %d cursos\n", nombre, cursos)
+	fmt.Printf("%v tiene más de %v cursos\n", nombre, cursos)
+
+	//Sprintf
+	message := fmt.Sprintf("%s tiene más de %d cursos", nombre, cursos)
+	fmt.Println(message)
+
+	//Tipo de dato
+	fmt.Printf("Tipo de variable de helloMessage: %T\n", helloMessage)
+	fmt.Printf("Tipo de variable de cursos: %T\n", cursos)
+
 }
