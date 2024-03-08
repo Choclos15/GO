@@ -94,4 +94,44 @@ func main() {
 	fmt.Printf("Tipo de variable de helloMessage: %T\n", helloMessage)
 	fmt.Printf("Tipo de variable de cursos: %T\n", cursos)
 
+	//Uso de Funciones
+	NormalFunction()
+	NormalFunction2("Hola Mundo")
+	TripeArgument(1, 2, "Hola Mundo")
+	TripeArgument2(1, 2, "Hola Mundo")
+	value := ReturnValue(2)
+	fmt.Println("Value: ", value)
+	value1, value2 := DoubleReturn(2)
+	fmt.Println("Value1: ", value1)
+	fmt.Println("Value2: ", value2)
+
+	value3, _ := DoubleReturn(2)
+	fmt.Println("Value3: ", value3)
+
+	_, value4 := DoubleReturn(2)
+	fmt.Println("Value4: ", value4)
+}
+
+func NormalFunction() {
+	fmt.Println("Hola Mundo")
+}
+
+func NormalFunction2(message string) {
+	fmt.Println(message)
+}
+
+func TripeArgument(a int, b int, c string) {
+	fmt.Println(a, b, c)
+}
+
+func TripeArgument2(a, b int, c string) {
+	fmt.Println(a, b, c)
+}
+
+func ReturnValue(a int) int {
+	return a * 2
+}
+
+func DoubleReturn(a int) (c, d int) {
+	return a, a * 2
 }
