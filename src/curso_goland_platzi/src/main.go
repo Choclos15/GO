@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"strconv"
+)
 
 func main() {
 
@@ -124,6 +128,76 @@ func main() {
 		fmt.Println(cont)
 		cont++
 	}
+
+	//For forever
+	/*
+		counterForever := 0
+		for {
+			fmt.Println(counterForever)
+			counterForever++
+		}
+	*/
+
+	//Condición if
+	var1 := 1
+	var2 := 2
+
+	if var1 == 1 {
+		fmt.Println("Es 1")
+	} else {
+		fmt.Println("No es 1")
+	}
+
+	if var2 == 1 {
+		fmt.Println("Es 1")
+	} else {
+		fmt.Println("No es 1")
+	}
+
+	if var1 == 2 {
+		fmt.Println("Es 2")
+	} else {
+		fmt.Println("No es 2")
+	}
+
+	if var2 == 2 {
+		fmt.Println("Es 2")
+	} else {
+		fmt.Println("No es 2")
+	}
+
+	//With and
+	if var1 == 1 && var2 == 2 {
+		fmt.Println("Es verdad")
+	} else {
+		fmt.Println("Es mentira")
+	}
+
+	if var1 == 2 && var2 == 1 {
+		fmt.Println("Es verdad")
+	} else {
+		fmt.Println("Es mentira")
+	}
+
+	if var1 == 1 || var2 == 2 {
+		fmt.Println("Es verdad")
+	} else {
+		fmt.Println("Es mentira")
+	}
+
+	if var1 == 2 || var2 == 1 {
+		fmt.Println("Es verdad")
+	} else {
+		fmt.Println("Es mentira")
+	}
+
+	//Convertir texto a int
+	valueTxt, err := strconv.Atoi("53")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(valueTxt)
 }
 
 func NormalFunction() {
