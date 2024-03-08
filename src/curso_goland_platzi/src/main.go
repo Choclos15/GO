@@ -101,6 +101,7 @@ func main() {
 	TripeArgument2(1, 2, "Hola Mundo")
 	value := ReturnValue(2)
 	fmt.Println("Value: ", value)
+
 	value1, value2 := DoubleReturn(2)
 	fmt.Println("Value1: ", value1)
 	fmt.Println("Value2: ", value2)
@@ -110,6 +111,19 @@ func main() {
 
 	_, value4 := DoubleReturn(2)
 	fmt.Println("Value4: ", value4)
+
+	//Ciclos
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+
+	fmt.Println()
+	//For While
+	cont := 0
+	for cont < 10 {
+		fmt.Println(cont)
+		cont++
+	}
 }
 
 func NormalFunction() {
