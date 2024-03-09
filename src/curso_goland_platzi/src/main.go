@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"strconv"
+	"sync"
+	"time"
 )
 
 func main() {
@@ -349,6 +351,27 @@ func main() {
 	//Lista de interfaces
 	myInterface := []interface{}{"Hola", 12, 4.1}
 	fmt.Println(myInterface...)
+
+	var wg sync.WaitGroup
+
+	fmt.Println("Hello")
+	wg.Add(1)
+	//go say("World")
+	go say("World", &wg)
+
+	wg.Wait()
+
+	go func(text string) {
+		fmt.Println(text)
+	}("Adios")
+
+	time.Sleep(2000)
+}
+
+func say(text string, wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	fmt.Println(text)
 }
 
 type Figuras2D interface {
