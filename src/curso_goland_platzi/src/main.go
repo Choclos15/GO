@@ -312,6 +312,39 @@ func main() {
 	fmt.Println(mycar2)
 	mypackage.PrintMessage()
 	mypackage.PrintMessage2("Hola Platzi")
+
+	varA := 50
+	varB := &varA
+
+	fmt.Println(varA)
+	fmt.Println(varB)
+	fmt.Println(*varB)
+
+	*varB = 100
+	fmt.Println(varA)
+
+	mypc := pc{ram: 16, disk: 128, brand: "Acer"}
+	fmt.Println(mypc)
+
+	mypc.ping()
+	fmt.Println(mypc)
+	mypc.DuplicateRam()
+	fmt.Println(mypc)
+
+}
+
+type pc struct {
+	ram   int
+	disk  int
+	brand string
+}
+
+func (mypc *pc) DuplicateRam() {
+	mypc.ram = mypc.ram * 2
+}
+
+func (mypc pc) ping() {
+	fmt.Println(mypc.brand, "Pong")
 }
 
 func IsPalindromo(text string) {
