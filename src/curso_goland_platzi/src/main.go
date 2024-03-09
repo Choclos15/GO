@@ -309,6 +309,22 @@ func IsPalindromo(text string) {
 	valueMap2, ok = m["Josep"]
 	fmt.Println(valueMap2, ok)
 
+	/*
+		-----------------------------------------------------------------------------------------
+	*/
+	myCar := car{brand: "Ford", year: 2024}
+	fmt.Println(myCar)
+
+	//Otra manera
+	var otherCar car
+	otherCar.brand = "Mazda"
+	fmt.Println(otherCar)
+
+}
+
+type car struct {
+	brand string
+	year  int
 }
 
 func NormalFunction() {
