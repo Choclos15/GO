@@ -336,10 +336,48 @@ func main() {
 
 	fmt.Println(mypc2)
 
+	//sin interface
+	myCuadrado := Cuadrado{base: 2}
+	myRectangulo := Rectangulo{base: 2, altura: 4}
+	fmt.Println("Area cuadrado: ", myCuadrado.area())
+	fmt.Println("Area rectangulo: ", myRectangulo.area())
+
+	//Con interface
+	Calcular(myCuadrado)
+	Calcular(myRectangulo)
+
+	//Lista de interfaces
+	myInterface := []interface{}{"Hola", 12, 4.1}
+	fmt.Println(myInterface...)
+}
+
+type Figuras2D interface {
+	area() float64
+}
+
+func Calcular(f Figuras2D) {
+	fmt.Println("Area: ", f.area())
 }
 
 func (mypc pc) String() string {
 	return fmt.Sprintf("Tengo %d GM ram, %d GB disco y es una %s", mypc.ram, mypc.disk, mypc.brand)
+}
+
+type Cuadrado struct {
+	base float64
+}
+
+func (c Cuadrado) area() float64 {
+	return c.base * c.base
+}
+
+type Rectangulo struct {
+	base   float64
+	altura float64
+}
+
+func (r Rectangulo) area() float64 {
+	return r.base * r.altura
 }
 
 type pc struct {
