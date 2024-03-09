@@ -331,6 +331,15 @@ func main() {
 	mypc.DuplicateRam()
 	fmt.Println(mypc)
 
+	//Stringers
+	mypc2 := pc{ram: 16, brand: "MSI", disk: 256}
+
+	fmt.Println(mypc2)
+
+}
+
+func (mypc pc) String() string {
+	return fmt.Sprintf("Tengo %d GM ram, %d GB disco y es una %s", mypc.ram, mypc.disk, mypc.brand)
 }
 
 type pc struct {
