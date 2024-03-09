@@ -374,6 +374,43 @@ func main() {
 	go say2("bye", varC)
 
 	fmt.Println(<-varC)
+
+	c2 := make(chan string, 2)
+	c2 <- "Mensaje1"
+	c2 <- "Mensaje2"
+
+	fmt.Println(len(c2), cap(c2))
+
+	//Range y close
+	close(c2)
+	//c2 <- "Mensaje3"
+
+	for message2 := range c2 {
+		fmt.Println(message2)
+	}
+
+	//Select
+	email1 := make(chan string)
+	email2 := make(chan string)
+
+	go Message("mensaje1", email1)
+	go Message("mensaje2", email2)
+
+	for i := 0; i < 2; i++ {
+		select {
+		case m1 := <-email1:
+			fmt.Println("Email recibido de email1: ", m1)
+		case m1 := <-email2:
+			fmt.Println("Email recibido de email2: ", m1)
+
+		}
+	}
+
+}
+
+func Message(text string, c chan string) {
+	c <- text
+
 }
 
 func say2(text string, c chan<- string) {
