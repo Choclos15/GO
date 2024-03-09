@@ -1,6 +1,7 @@
 package main
 
 import (
+	"curso_goland_platzi/src/mypackage"
 	"fmt"
 	"log"
 	"strconv"
@@ -275,20 +276,6 @@ func main() {
 
 	IsPalindromo("amor a roma")
 	IsPalindromo("casas")
-}
-
-func IsPalindromo(text string) {
-	var textReverse string
-
-	for i := len(text) - 1; i >= 0; i-- {
-		textReverse += string(text[i])
-	}
-
-	if text == textReverse {
-		fmt.Println("Es palindromo")
-	} else {
-		fmt.Println("No es palindromo")
-	}
 
 	m := make(map[string]int)
 
@@ -320,6 +307,25 @@ func IsPalindromo(text string) {
 	otherCar.brand = "Mazda"
 	fmt.Println(otherCar)
 
+	var mycar2 mypackage.CarPublic
+	mycar2.Brand = "Nissan"
+	fmt.Println(mycar2)
+	mypackage.PrintMessage()
+	mypackage.PrintMessage2("Hola Platzi")
+}
+
+func IsPalindromo(text string) {
+	var textReverse string
+
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if text == textReverse {
+		fmt.Println("Es palindromo")
+	} else {
+		fmt.Println("No es palindromo")
+	}
 }
 
 type car struct {
