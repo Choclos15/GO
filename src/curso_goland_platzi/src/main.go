@@ -366,6 +366,19 @@ func main() {
 	}("Adios")
 
 	time.Sleep(2000)
+
+	varC := make(chan string, 1)
+
+	fmt.Println("Hello")
+
+	go say2("bye", varC)
+
+	fmt.Println(<-varC)
+}
+
+func say2(text string, c chan<- string) {
+	c <- text
+	//text = <-c
 }
 
 func say(text string, wg *sync.WaitGroup) {
